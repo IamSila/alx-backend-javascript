@@ -1,0 +1,1 @@
+In this directory, I will deal with classes in JavaScript.
