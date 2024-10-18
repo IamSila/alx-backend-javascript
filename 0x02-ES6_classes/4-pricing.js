@@ -26,6 +26,9 @@ currency (Currency) */
 
   /** setter for amount */
   set amount(value) {
+    if (typeof value !== 'number') {
+      throw new TypeError('amount must be a number');
+    }
     this._amount = value;
   }
 
@@ -36,8 +39,8 @@ currency (Currency) */
 
   /** setter for currency */
   set currency(curr) {
-    if (!(currency instanceof Currency)) {
-      throw new TypeError('currency must be instance of currency');
+    if (!(curr instanceof Currency)) {
+      throw new TypeError('currency must be a Currency');
     }
     this._currency = curr;
   }
@@ -50,6 +53,12 @@ currency (Currency) */
   }
 
   static convertPrice(amount, conversionRate) {
-    return this.amount * conversionRate;
+    if (typeof amount !== 'number') {
+      throw new TypeError('amount must be a number');
+    }
+    if (typeof conversionRate !== 'number') {
+      throw new TypeError('conversion rate must be a number');
+    }
+    return amount * conversionRate;
   }
 }
