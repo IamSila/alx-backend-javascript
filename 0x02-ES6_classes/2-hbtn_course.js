@@ -29,9 +29,10 @@ students (array of Strings) */
 
   /** setter for name */
   set name(name) {
-    if (typeof name === 'string') {
-      this._name = name;
+    if (typeof name !== 'string') {
+      throw new TypeError('Name must be a string');
     }
+    this._name = name;
   }
 
   /** getter for length */
@@ -41,9 +42,10 @@ students (array of Strings) */
 
   /** setter for length */
   set length(length) {
-    if (typeof length === 'number') {
-      this._length = length;
+    if (typeof length !== 'number') {
+      throw new TypeError('Length must be a number');
     }
+    this._length = length;
   }
 
   /** getter for students */
@@ -53,8 +55,9 @@ students (array of Strings) */
 
   /** setter for students */
   set students(students) {
-    if (typeof students === 'object') {
-      this._students = students;
+    if (typeof students !== 'object') {
+      throw new TypeError('Students must be an array');
     }
+    this._students = students;
   }
 }
