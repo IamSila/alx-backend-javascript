@@ -46,7 +46,7 @@ currency (Currency) */
    *  returns the attributes in the following format
    *  amount currency_name (currency_code). */
   displayFullPrice() {
-    return (`${this._amount} ${this._currency._name} (${this._currency._code})`)
+    return (`${this._amount} ${this.currency.name} (${this.currency.code})`);
   }
 
   static convertPrice(amount, conversionRate) {
