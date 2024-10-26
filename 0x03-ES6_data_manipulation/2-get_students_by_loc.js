@@ -1,4 +1,4 @@
-/** 
+/**
  * function to return array of objects located in a certain city
  * arguments - list of students, city
  */
